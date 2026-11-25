@@ -3,470 +3,373 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ryan J Sukys — Copywriter &amp; Content Strategist</title>
-<meta name="description" content="Ryan J Sukys, copywriter and content strategist. Brand, campaign, B2B and event copy for Salesforce Dreamforce, Connections, Agentforce, Tableau and PeakActivity.">
-<meta property="og:title" content="Ryan J Sukys — Copywriter &amp; Content Strategist">
-<meta property="og:description" content="Brand, campaign, B2B and event copy for Salesforce, Tableau and PeakActivity.">
+<title>Ryan J Sukys, copywriter</title>
+<meta name="description" content="Ryan J Sukys writes brand, campaign, B2B and live-event copy. Dreamforce, Connections, Agentforce, Tableau and PeakActivity.">
+<meta property="og:title" content="Ryan J Sukys, copywriter">
+<meta property="og:description" content="Burger baron turned copywriter. Brand, campaign, B2B and live-event copy.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ryanjsukys.github.io/portfolio/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #0c0c0c;
-    --surface: #161616;
-    --surface2: #1e1e1e;
-    --border: #2a2a2a;
-    --text: #f0ede8;
-    --text-muted: #9a9a9a;
-    --text-dim: #6e6e6e;
-    --accent: #c8a96e;
-    --accent-dim: rgba(200,169,110,0.12);
-    --radius: 6px;
-    --pad: 80px;
-    --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    --paper: #121110;
+    --ink: #ece6da;
+    --soft: #9a948a;
+    --rule: #2e2c29;
+    --red: #e0623f;
+    --display: 'Gloock', 'Times New Roman', serif;
+    --text: 'Source Serif 4', Georgia, serif;
+    --gutter: clamp(16px, 5vw, 72px);
+    --measure: 36rem;
   }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.6; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font: 19px/1.55 var(--text); -webkit-font-smoothing: antialiased; }
   img, video { max-width: 100%; display: block; }
-  a { color: inherit; }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--red); }
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+  ::selection { background: var(--red); color: #121110; }
+  em { font-style: italic; }
 
-  /* NAV — three destinations plus a clear contact action */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(12,12,12,0.92); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 40px;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 56px;
-  }
-  nav .logo { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--text); text-decoration: none; }
-  nav ul { list-style: none; display: flex; gap: 28px; align-items: center; }
-  nav ul a { color: var(--text-muted); font-size: 12px; letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
-  nav ul a:hover { color: var(--accent); }
-  nav ul a.nav-cta { color: var(--bg); background: var(--accent); padding: 7px 14px; border-radius: 100px; font-weight: 600; }
-  nav ul a.nav-cta:hover { color: var(--bg); opacity: 0.9; }
+  .page { max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
 
-  /* BUTTONS */
-  .btn { display: inline-block; padding: 13px 24px; border-radius: 100px; font-size: 14px; font-weight: 600; text-decoration: none; border: 1px solid var(--border); color: var(--text); transition: border-color 0.2s, opacity 0.2s; }
-  .btn:hover { border-color: var(--accent); }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
-  .btn.primary:hover { opacity: 0.9; }
-  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  /* MASTHEAD: a plain line of type, like the top of a magazine page */
+  .masthead { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 22px 0 14px; border-bottom: 2px solid var(--ink); font-size: 16px; }
+  .masthead .name { font-family: var(--display); font-size: 22px; text-decoration: none; }
+  .masthead nav { display: flex; gap: 22px; }
+  .masthead nav a { text-decoration: none; }
+  .masthead nav a:hover { text-decoration: underline; }
 
-  /* HERO — who, what, proof and next step, all in the first screen */
-  .hero {
-    padding: 160px var(--pad) 88px;
-    border-bottom: 1px solid var(--border);
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(200,169,110,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-eyebrow { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
-  .hero h1 { font-size: clamp(48px, 7vw, 96px); font-weight: 700; line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 28px; max-width: 800px; }
-  .hero h1 span { color: var(--accent); }
-  .hero-desc { font-size: 19px; line-height: 1.65; color: var(--text-muted); max-width: 600px; margin-bottom: 36px; }
-  .hero-desc strong { color: var(--text); font-weight: 600; }
-  .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 56px; max-width: 900px; }
-  .hero-stat { background: var(--surface); padding: 22px 24px; }
-  .hero-stat b { display: block; font-size: 34px; font-weight: 700; letter-spacing: -0.02em; color: var(--accent); line-height: 1.1; margin-bottom: 4px; }
-  .hero-stat span { font-size: 13px; color: var(--text-muted); }
-  .hero-meta { display: flex; flex-wrap: wrap; gap: 16px 48px; margin-top: 32px; }
-  .hero-meta-item .label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px; }
-  .hero-meta-item .val { font-size: 14px; color: var(--text); }
+  /* OPENER */
+  .opener { padding: clamp(56px, 10vw, 120px) 0 clamp(48px, 7vw, 88px); border-bottom: 1px solid var(--rule); }
+  .opener h1 { font-family: var(--display); font-weight: 400; font-size: clamp(54px, 11vw, 150px); line-height: 0.92; letter-spacing: -0.02em; max-width: 11ch; }
+  .opener h1 em { color: var(--red); }
+  .opener-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; margin-top: clamp(40px, 6vw, 72px); align-items: start; }
+  .opener-body p { max-width: var(--measure); }
+  .opener-body p + p { margin-top: 1em; }
+  .opener-body .sig { color: var(--soft); font-style: italic; }
 
-  /* WORK INDEX — jump links to each project */
-  .work-index { padding: 72px var(--pad) 0; }
-  .work-index h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 24px; }
-  .work-list { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-  .work-list a { display: block; height: 100%; padding: 18px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; transition: border-color 0.2s; }
-  .work-list a:hover { border-color: var(--accent); }
-  .work-list .k { display: block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-  .work-list .t { display: block; font-size: 16px; font-weight: 600; line-height: 1.3; }
+  /* CONTENTS: numbered, with dotted leaders */
+  .contents { list-style: none; border-top: 1px solid var(--ink); }
+  .contents li { border-bottom: 1px solid var(--rule); }
+  .contents a { display: flex; align-items: baseline; gap: 14px; padding: 12px 0; text-decoration: none; }
+  .contents .n { font-family: var(--display); color: var(--red); width: 2ch; }
+  .contents .t { white-space: nowrap; }
+  .contents .dots { flex: 1; border-bottom: 1px dotted var(--soft); transform: translateY(-5px); min-width: 12px; }
+  .contents .y { color: var(--soft); font-style: italic; }
+  .contents a:hover .t { text-decoration: underline; }
 
-  /* SECTION WRAPPER */
-  section { padding: 100px var(--pad); border-bottom: 1px solid var(--border); }
-  .section-header { margin-bottom: 56px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; align-items: end; }
-  .section-eyebrow { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-  .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
-  .section-desc { font-size: 16px; color: var(--text-muted); max-width: 640px; line-height: 1.7; }
+  /* PROJECTS */
+  .project { padding: clamp(64px, 9vw, 112px) 0; border-bottom: 1px solid var(--rule); }
+  .project-head { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0 24px; }
+  .num { font-family: var(--display); font-size: clamp(56px, 8vw, 104px); line-height: 0.8; color: var(--red); }
+  .project h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 60px); line-height: 1; letter-spacing: -0.01em; }
+  .credit { margin-top: 10px; font-style: italic; color: var(--soft); }
 
-  /* PROJECT FACTS — role, scope, reach at a glance */
-  .facts { display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; padding: 20px 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; }
-  .facts dt { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); padding-top: 3px; }
-  .facts dd { color: var(--text); }
+  /* The headline he wrote, set as a pull quote */
+  .pull { margin: clamp(40px, 6vw, 72px) 0 clamp(28px, 4vw, 44px) calc(7rem + 24px); font-family: var(--display); font-size: clamp(32px, 5.2vw, 68px); line-height: 1.02; letter-spacing: -0.01em; max-width: 16ch; text-indent: -0.42em; }
+  .pull-src { margin-left: calc(7rem + 24px); font-size: 15px; color: var(--soft); font-style: italic; margin-top: -12px; margin-bottom: clamp(36px, 5vw, 56px); }
 
-  /* VIDEO GRID */
-  .video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 48px; }
-  .video-wrap { border-radius: var(--radius); overflow: hidden; background: var(--surface); }
-  .video-wrap video { width: 100%; }
-  .video-wrap .cap { padding: 10px 12px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
+  .story { margin-left: calc(7rem + 24px); max-width: var(--measure); }
+  .story p + p { margin-top: 1em; }
 
-  /* PANORAMIC — wide signage scrolls sideways */
-  .panoramic-wrap {
-    width: 100%; overflow-x: auto; border-radius: var(--radius);
-    background: var(--surface); margin-bottom: 10px;
-    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-  }
-  .panoramic-wrap img { height: 220px; width: auto; max-width: none; cursor: zoom-in; }
-  .image-caption { font-size: 12px; color: var(--text-muted); letter-spacing: 0.03em; margin-bottom: 32px; }
+  /* Samples: thin rules, captions underneath, no cards */
+  .samples { margin-top: clamp(48px, 6vw, 72px); }
+  .samples h3 { font-family: var(--text); font-weight: 600; font-size: 15px; letter-spacing: 0.02em; padding-bottom: 8px; border-bottom: 1px solid var(--ink); margin: 48px 0 20px; }
+  .samples h3:first-child { margin-top: 0; }
+  figure { margin: 0; }
+  figure img, figure video { width: 100%; height: auto; border: 1px solid var(--rule); background: #1b1a18; }
+  figure img { cursor: zoom-in; }
+  figcaption { font-size: 15px; font-style: italic; color: var(--soft); margin-top: 8px; }
+  .row { display: grid; gap: 28px 24px; align-items: start; }
+  .row + .row { margin-top: 28px; }
+  .c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .wide-left { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+  .stack { display: grid; gap: 28px; }
 
-  /* IMAGE GRIDS */
-  .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 16px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 16px; }
-  .stack { display: flex; flex-direction: column; gap: 16px; }
-  .grid-2, .grid-3 { align-items: start; }
-  .spaced { margin-bottom: 48px; }
+  .pano { overflow-x: auto; border: 1px solid var(--rule); scrollbar-width: thin; }
+  .pano img { height: 210px; width: auto; max-width: none; border: 0; }
+  .email img { height: 460px; object-fit: cover; object-position: top; }
+  .scroll-frame { max-height: 620px; overflow-y: auto; border: 1px solid var(--rule); scrollbar-width: thin; }
+  .scroll-frame img { border: 0; }
 
-  .img-card {
-    border-radius: var(--radius); overflow: hidden; background: var(--surface);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .img-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
-  .img-card img { width: 100%; height: auto; cursor: zoom-in; }
-  .img-card .cap { padding: 10px 12px; font-size: 12px; color: var(--text-muted); letter-spacing: 0.02em; border-top: 1px solid var(--border); }
-
-  /* Long emails: show the top, open the whole thing in the lightbox */
-  .img-card.email img { height: 480px; object-fit: cover; object-position: top; }
-
-  /* Full-page screenshot: scrolls inside a frame instead of being cropped */
-  .scroll-frame { max-height: 640px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
-
-  /* CAMPAIGN DIVIDER */
-  .campaign-divider { margin: 64px 0; border: none; border-top: 1px solid var(--border); }
-  .campaign-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 24px; max-width: 640px; line-height: 1.7; }
-
-  /* SUBSECTION */
-  .subsection-title { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .pills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; }
+  .pills figcaption { margin-top: 4px; }
 
   /* ABOUT */
-  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 64px; }
-  .about p { font-size: 17px; color: var(--text-muted); line-height: 1.75; margin-bottom: 18px; max-width: 640px; }
-  .about p strong { color: var(--text); font-weight: 600; }
-  .skills { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-  .skills li { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 6px 12px; border-radius: 100px; }
+  .about { padding: clamp(64px, 9vw, 112px) 0; border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 56px; }
+  .about h2 { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 6vw, 76px); line-height: 0.95; }
+  .about p { max-width: var(--measure); }
+  .about p + p { margin-top: 1em; }
+  .about .drop::first-letter { font-family: var(--display); float: left; font-size: 4.1em; line-height: 0.82; padding: 6px 10px 0 0; color: var(--red); }
 
   /* CONTACT */
-  .contact { padding: 100px var(--pad); text-align: center; }
-  .contact h2 { font-size: clamp(36px, 6vw, 56px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px; }
-  .contact p { color: var(--text-muted); margin-bottom: 32px; font-size: 16px; }
-  .contact .btn-row { justify-content: center; }
-  .site-footer { padding: 24px var(--pad); border-top: 1px solid var(--border); font-size: 12px; color: var(--text-dim); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .site-footer a { color: var(--text-muted); text-decoration: none; }
+  .contact { padding: clamp(72px, 10vw, 128px) 0 48px; }
+  .contact p { font-style: italic; color: var(--soft); margin-bottom: 12px; }
+  .contact .big { font-family: var(--display); font-size: clamp(30px, 6.4vw, 88px); line-height: 1; word-break: break-word; text-decoration: none; border-bottom: 3px solid var(--red); }
+  .contact .others { margin-top: 28px; display: flex; gap: 24px; font-size: 17px; }
+  .colophon { border-top: 2px solid var(--ink); padding: 14px 0 40px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 15px; color: var(--soft); }
 
   /* LIGHTBOX */
-  #lightbox {
-    display: none; position: fixed; inset: 0; z-index: 1000;
-    background: rgba(0,0,0,0.95); align-items: center; justify-content: center;
-    padding: 40px; overflow: auto;
-  }
+  #lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(10,10,9,0.96); align-items: center; justify-content: center; padding: 40px; overflow: auto; }
   #lightbox.open { display: flex; }
-  #lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: var(--radius); }
+  #lightbox img { max-width: 100%; max-height: 90vh; object-fit: contain; }
   #lightbox.tall { align-items: flex-start; }
   #lightbox.tall img { max-height: none; width: min(900px, 100%); }
-  #lightbox-close {
-    position: fixed; top: 20px; right: 28px; font-size: 28px; color: var(--text-muted);
-    cursor: pointer; background: none; border: none; line-height: 1;
-    transition: color 0.2s;
-  }
-  #lightbox-close:hover { color: var(--text); }
+  #lightbox-close { position: fixed; top: 16px; right: 22px; font: 32px/1 var(--display); color: var(--paper); background: none; border: 0; cursor: pointer; }
 
-  @media (max-width: 1000px) {
-    .work-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .section-header, .about { grid-template-columns: 1fr; gap: 28px; }
+  @media (max-width: 860px) {
+    body { font-size: 18px; }
+    .opener-body, .about { grid-template-columns: 1fr; gap: 40px; }
+    .project-head { grid-template-columns: 1fr; gap: 8px; }
+    .pull, .pull-src, .story { margin-left: 0; }
+    .c3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .wide-left { grid-template-columns: 1fr; }
   }
-  @media (max-width: 700px) {
-    :root { --pad: 16px; }
-    nav { padding: 0 16px; } nav ul { gap: 16px; }
-    nav ul li.hide-sm { display: none; }
-    .hero { padding-top: 112px; padding-bottom: 64px; }
-    .hero-stats { grid-template-columns: 1fr; }
-    .hero-stat { display: flex; align-items: baseline; gap: 14px; padding: 16px 18px; }
-    .hero-stat b { font-size: 28px; min-width: 92px; margin: 0; }
-    .work-index { padding-top: 56px; }
-    section, .contact { padding-top: 72px; padding-bottom: 72px; }
-    .video-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    .panoramic-wrap img { height: 160px; }
-    .img-card.email img { height: 420px; }
-    .scroll-frame { max-height: 520px; }
-    #lightbox { padding: 56px 12px 12px; }
+  @media (max-width: 560px) {
+    .masthead nav { gap: 14px; }
+    .masthead nav .hide-sm { display: none; }
+    .c2, .c3, .pills { grid-template-columns: 1fr; }
+    .pano img { height: 150px; }
+    .email img { height: 400px; }
+    .scroll-frame { max-height: 500px; }
+    .contents .y { display: none; }
+    .contact .others { flex-direction: column; gap: 10px; }
+    #lightbox { padding: 56px 10px 10px; }
   }
 </style>
 </head>
 <body>
+<div class="page">
 
-<nav aria-label="Main">
-  <a class="logo" href="#top">RJS — Portfolio</a>
-  <ul>
-    <li><a href="#work">Work</a></li>
-    <li class="hide-sm"><a href="#about">About</a></li>
-    <li><a class="nav-cta" href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header class="hero" id="top">
-  <div class="hero-eyebrow">Copywriter &amp; Content Strategist</div>
-  <h1>Ryan J <span>Sukys</span></h1>
-  <p class="hero-desc">I write <strong>brand, campaign, B2B and event copy</strong>, from conference backwalls and sizzle reels to the email that gets the registration. 7+ years across agency, brand, and enterprise environments. Formerly: burger baron.</p>
-  <div class="btn-row">
-    <a class="btn primary" href="#work">See the work</a>
-    <a class="btn" href="mailto:ryanjsukys@gmail.com">ryanjsukys@gmail.com</a>
-  </div>
-
-  <div class="hero-stats">
-    <div class="hero-stat"><b>7+</b><span>years writing for agency, brand and enterprise teams</span></div>
-    <div class="hero-stat"><b>40K+</b><span>in-person attendees reached by my Dreamforce 2025 activation</span></div>
-    <div class="hero-stat"><b>200K+</b><span>registered Dreamforce 2025 attendees</span></div>
-  </div>
-
-  <div class="hero-meta">
-    <div class="hero-meta-item">
-      <div class="label">Specialties</div>
-      <div class="val">Brand · Campaign · B2B · Event</div>
-    </div>
-    <div class="hero-meta-item">
-      <div class="label">Recent</div>
-      <div class="val">Salesforce · PeakActivity · NSC Staffing</div>
-    </div>
-  </div>
+<header class="masthead" id="top">
+  <a class="name" href="#top">Ryan J Sukys</a>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a class="hide-sm" href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
+<section class="opener">
+  <h1>Burger baron turned <em>copywriter.</em></h1>
+  <div class="opener-body">
+    <div>
+      <p>Seven-plus years writing brand, campaign and live-event copy across agency, brand and enterprise teams, from the Dreamforce 2025 activation (40,000+ people in person) to full-funnel B2B campaigns.</p>
+      <p class="sig">I use AI to explore concepts and draft variations. The tone, the wit, and the judgment of what a specific audience needs to hear are still mine.</p>
+    </div>
+    <ol class="contents" id="work" aria-label="Selected work">
+      <li><a href="#dreamforce"><span class="n">01</span><span class="t">Salesforce on Salesforce</span><span class="dots"></span><span class="y">Dreamforce 2025</span></a></li>
+      <li><a href="#connections"><span class="n">02</span><span class="t">The Connections rebrand</span><span class="dots"></span><span class="y">Connections 2025</span></a></li>
+      <li><a href="#agentforce"><span class="n">03</span><span class="t">Agentforce &amp; Tableau</span><span class="dots"></span><span class="y">2024–25</span></a></li>
+      <li><a href="#peakactivity"><span class="n">04</span><span class="t">Four years at PeakActivity</span><span class="dots"></span><span class="y">2020–24</span></a></li>
+    </ol>
+  </div>
+</section>
+
 <main>
-<!-- WORK INDEX -->
-<div class="work-index" id="work">
-  <h2>Selected work</h2>
-  <ul class="work-list">
-    <li><a href="#dreamforce"><span class="k">Event · Dreamforce 2025</span><span class="t">Salesforce on Salesforce</span></a></li>
-    <li><a href="#connections"><span class="k">Brand · Connections 2025</span><span class="t">Connections conference rebrand</span></a></li>
-    <li><a href="#agentforce"><span class="k">B2B · Agentforce &amp; Tableau</span><span class="t">Platform &amp; product copy</span></a></li>
-    <li><a href="#peakactivity"><span class="k">Agency · PeakActivity</span><span class="t">Full-funnel B2B campaigns</span></a></li>
-  </ul>
-</div>
-
-<!-- DREAMFORCE -->
-<section id="dreamforce">
-  <div class="section-header">
+<!-- 01 DREAMFORCE -->
+<article class="project" id="dreamforce">
+  <div class="project-head">
+    <div class="num">01</div>
     <div>
-      <div class="section-eyebrow">Salesforce · Dreamforce 2025</div>
-      <h2 class="section-title">Salesforce on Salesforce</h2>
-      <p class="section-desc">Copy Lead for Salesforce's own flagship installation at Dreamforce 2025: the "Agentic Enterprise" activation at the entrance to Agentforce City. Owned copy end-to-end across the entire physical footprint: backwall, ring banner, eight demo-screen narratives, theater screensaver, and the Customer Zero sizzle script.</p>
-    </div>
-    <dl class="facts">
-      <dt>Role</dt><dd>Copy Lead (sole writer)</dd>
-      <dt>Reach</dt><dd>40,000+ in person, 200,000+ registered</dd>
-      <dt>Scope</dt><dd>Sizzle reels, environmental signage, 8 demo narratives, screensaver, LIV Golf activation</dd>
-    </dl>
-  </div>
-
-  <div class="subsection-title">Sizzle Reels</div>
-  <div class="video-grid">
-    <div class="video-wrap">
-      <video controls preload="metadata" playsinline>
-        <source src="assets/dreamforceReelSFonSF.mp4" type="video/mp4">
-      </video>
-      <div class="cap">Dreamforce Activation Reel</div>
-    </div>
-    <div class="video-wrap">
-      <video controls preload="metadata" playsinline>
-        <source src="assets/statsReelSFonSF.mp4" type="video/mp4">
-      </video>
-      <div class="cap">Stats &amp; Metrics Reel</div>
-    </div>
-    <div class="video-wrap">
-      <video controls preload="metadata" playsinline>
-        <source src="assets/webReelSFonSF.mp4" type="video/mp4">
-      </video>
-      <div class="cap">Web &amp; Digital Reel</div>
+      <h2>Salesforce on Salesforce</h2>
+      <p class="credit">Copy lead and sole writer. Dreamforce 2025, San Francisco.</p>
     </div>
   </div>
-
-  <div class="subsection-title">Backwall &amp; Ring Banner</div>
-  <div class="panoramic-wrap" tabindex="0" aria-label="Theater backwall, scroll sideways">
-    <img src="assets/img/sfonsf-backwall.jpg" width="2400" height="335" loading="lazy" decoding="async" alt="Theater backwall at the entrance to Agentforce City">
-  </div>
-  <p class="image-caption">Theater backwall, entrance to Agentforce City (scroll sideways or click to enlarge)</p>
-  <div class="panoramic-wrap" tabindex="0" aria-label="Mission Control ring banner, scroll sideways">
-    <img src="assets/img/ring-banner.jpg" width="2400" height="146" loading="lazy" decoding="async" alt="Mission Control ring banner">
-  </div>
-  <p class="image-caption">Mission Control ring banner, outside</p>
-
-  <div class="subsection-title">Demo Screen Narratives</div>
-  <div class="grid-2 spaced">
-    <div class="img-card"><img src="assets/img/agentforce-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce demo screen narrative"><div class="cap">Agentforce</div></div>
-    <div class="img-card"><img src="assets/img/sales-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Sales demo screen narrative"><div class="cap">Agentforce Sales</div></div>
-    <div class="img-card"><img src="assets/img/service-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Service demo screen narrative"><div class="cap">Agentforce Service</div></div>
-    <div class="img-card"><img src="assets/img/slack-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Slack demo screen narrative"><div class="cap">Agentforce Slack</div></div>
-    <div class="img-card"><img src="assets/img/tableau-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Tableau demo screen narrative"><div class="cap">Agentforce Tableau</div></div>
-    <div class="img-card"><img src="assets/img/marketing-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Marketing demo screen narrative"><div class="cap">Agentforce Marketing</div></div>
-    <div class="img-card"><img src="assets/img/mulesoft-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="MuleSoft and Data Cloud demo screen narrative"><div class="cap">MuleSoft &amp; Data Cloud</div></div>
-    <div class="img-card"><img src="assets/img/help-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Salesforce Help demo screen narrative"><div class="cap">Salesforce Help</div></div>
+  <p class="pull">“Salesforce is an Agentic Enterprise.”</p>
+  <p class="pull-src">Theater backwall, entrance to Agentforce City</p>
+  <div class="story">
+    <p>Salesforce's own flagship installation at Dreamforce: the "Agentic Enterprise" activation at the front door of Agentforce City. I owned the copy across the whole physical footprint, including the backwall, ring banner, eight demo-screen narratives, theater screensaver and the Customer Zero sizzle script.</p>
+    <p>It reached 40,000+ people in person and 200,000+ registered attendees.</p>
   </div>
 
-  <div class="subsection-title">Theater Screensaver &amp; LIV Golf Activation</div>
-  <div class="grid-3">
-    <div class="img-card"><img src="assets/img/theater-screensaver.jpg" width="512" height="288" loading="lazy" decoding="async" alt="Theater screensaver"><div class="cap">Theater screensaver</div></div>
-    <div class="img-card"><img src="assets/img/liv-golf-screen-1.jpg" width="1400" height="787" loading="lazy" decoding="async" alt="LIV Golf activation screen 1"><div class="cap">LIV Golf activation screen</div></div>
-    <div class="img-card"><img src="assets/img/liv-golf-screen-2.jpg" width="1400" height="787" loading="lazy" decoding="async" alt="LIV Golf activation screen 2"><div class="cap">LIV Golf activation screen 2</div></div>
-  </div>
-</section>
+  <div class="samples">
+    <h3>Sizzle reels</h3>
+    <div class="row c3">
+      <figure><video controls preload="metadata" playsinline><source src="assets/dreamforceReelSFonSF.mp4" type="video/mp4"></video><figcaption>Dreamforce activation reel</figcaption></figure>
+      <figure><video controls preload="metadata" playsinline><source src="assets/statsReelSFonSF.mp4" type="video/mp4"></video><figcaption>Stats &amp; metrics reel</figcaption></figure>
+      <figure><video controls preload="metadata" playsinline><source src="assets/webReelSFonSF.mp4" type="video/mp4"></video><figcaption>Web &amp; digital reel</figcaption></figure>
+    </div>
 
-<!-- CONNECTIONS -->
-<section id="connections">
-  <div class="section-header">
+    <h3>Backwall &amp; ring banner</h3>
+    <figure>
+      <div class="pano" tabindex="0" aria-label="Theater backwall, scroll sideways"><img src="assets/img/sfonsf-backwall.jpg" width="2400" height="335" loading="lazy" decoding="async" alt="Theater backwall at the entrance to Agentforce City"></div>
+      <figcaption>Theater backwall. Scroll sideways, or click to see it whole.</figcaption>
+    </figure>
+    <figure style="margin-top:24px">
+      <div class="pano" tabindex="0" aria-label="Mission Control ring banner, scroll sideways"><img src="assets/img/ring-banner.jpg" width="2400" height="146" loading="lazy" decoding="async" alt="Mission Control ring banner"></div>
+      <figcaption>Mission Control ring banner, outside.</figcaption>
+    </figure>
+
+    <h3>Demo-screen narratives</h3>
+    <div class="pills">
+      <figure><img src="assets/img/agentforce-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce demo screen narrative"><figcaption>Agentforce</figcaption></figure>
+      <figure><img src="assets/img/sales-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Sales demo screen narrative"><figcaption>Agentforce Sales</figcaption></figure>
+      <figure><img src="assets/img/service-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Service demo screen narrative"><figcaption>Agentforce Service</figcaption></figure>
+      <figure><img src="assets/img/slack-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Slack demo screen narrative"><figcaption>Agentforce in Slack</figcaption></figure>
+      <figure><img src="assets/img/tableau-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Tableau demo screen narrative"><figcaption>Agentforce Tableau</figcaption></figure>
+      <figure><img src="assets/img/marketing-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Agentforce Marketing demo screen narrative"><figcaption>Agentforce Marketing</figcaption></figure>
+      <figure><img src="assets/img/mulesoft-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="MuleSoft and Data Cloud demo screen narrative"><figcaption>MuleSoft &amp; Data Cloud</figcaption></figure>
+      <figure><img src="assets/img/help-pill.jpg" width="1400" height="221" loading="lazy" decoding="async" alt="Salesforce Help demo screen narrative"><figcaption>Salesforce Help</figcaption></figure>
+    </div>
+
+    <h3>Theater screensaver &amp; LIV Golf activation</h3>
+    <div class="row c3">
+      <figure><img src="assets/img/theater-screensaver.jpg" width="512" height="288" loading="lazy" decoding="async" alt="Theater screensaver"><figcaption>Theater screensaver</figcaption></figure>
+      <figure><img src="assets/img/liv-golf-screen-1.jpg" width="1400" height="787" loading="lazy" decoding="async" alt="LIV Golf activation screen 1"><figcaption>LIV Golf activation, screen 1</figcaption></figure>
+      <figure><img src="assets/img/liv-golf-screen-2.jpg" width="1400" height="787" loading="lazy" decoding="async" alt="LIV Golf activation screen 2"><figcaption>LIV Golf activation, screen 2</figcaption></figure>
+    </div>
+  </div>
+</article>
+
+<!-- 02 CONNECTIONS -->
+<article class="project" id="connections">
+  <div class="project-head">
+    <div class="num">02</div>
     <div>
-      <div class="section-eyebrow">Salesforce · Connections 2025</div>
-      <h2 class="section-title">Connections Conference Rebrand</h2>
-      <p class="section-desc">Selected as a new hire for the cross-functional tiger team that led the rebrand of Salesforce's Connections conference. Contributed homepage copy, email campaigns, and event materials, including speaker features for Tony Hawk and Forbes' #1 Most Influential CMO Bozoma Saint John.</p>
+      <h2>The Connections rebrand</h2>
+      <p class="credit">Copywriter II on the rebrand tiger team. Salesforce Marketing Cloud, 2025.</p>
     </div>
-    <dl class="facts">
-      <dt>Role</dt><dd>Copywriter II, rebrand tiger team</dd>
-      <dt>Team</dt><dd>Salesforce Marketing Cloud</dd>
-      <dt>Scope</dt><dd>Homepage, email campaigns, speaker features</dd>
-    </dl>
+  </div>
+  <p class="pull">“Learn from leaders on marketing's cutting edge.”</p>
+  <p class="pull-src">Homepage hero, featuring Tony Hawk and Bozoma Saint John</p>
+  <div class="story">
+    <p>Salesforce pulled me onto the cross-functional tiger team rebranding its Connections conference as a new hire. I contributed homepage copy, email campaigns and event materials, including the speaker features for Tony Hawk and Forbes' #1 Most Influential CMO, Bozoma Saint John.</p>
   </div>
 
-  <div class="subsection-title">Homepage</div>
-  <div class="grid-2">
-    <div class="img-card"><img src="assets/img/cnx-homepage-hero.jpg" width="1530" height="728" loading="lazy" decoding="async" alt="Connections homepage hero featuring Tony Hawk and Bozoma Saint John"><div class="cap">Homepage hero: Tony Hawk &amp; Bozoma Saint John</div></div>
-    <div class="img-card"><img src="assets/img/cnx-homepage-blade.jpg" width="1600" height="696" loading="lazy" decoding="async" alt="Connections homepage blade"><div class="cap">Homepage blade</div></div>
-  </div>
-  <div class="img-card spaced">
-    <img src="assets/img/cnx-bootcamp-blade.jpg" width="1600" height="863" loading="lazy" decoding="async" alt="Connections bootcamp promotional blade"><div class="cap">Bootcamp promotional blade</div>
-  </div>
+  <div class="samples">
+    <h3>Homepage</h3>
+    <div class="row c2">
+      <figure><img src="assets/img/cnx-homepage-hero.jpg" width="1530" height="728" loading="lazy" decoding="async" alt="Connections homepage hero featuring Tony Hawk and Bozoma Saint John"><figcaption>Homepage hero</figcaption></figure>
+      <figure><img src="assets/img/cnx-homepage-blade.jpg" width="1600" height="696" loading="lazy" decoding="async" alt="Connections homepage blade"><figcaption>Homepage blade</figcaption></figure>
+    </div>
+    <div class="row">
+      <figure><img src="assets/img/cnx-bootcamp-blade.jpg" width="1600" height="863" loading="lazy" decoding="async" alt="Connections bootcamp promotional blade"><figcaption>Bootcamp promo blade</figcaption></figure>
+    </div>
 
-  <div class="subsection-title">Email Campaigns</div>
-  <div class="grid-3">
-    <div class="img-card email"><img src="assets/img/tony-hawk-email.jpg" width="800" height="1525" loading="lazy" decoding="async" alt="Speaker announcement email featuring Tony Hawk"><div class="cap">Speaker announcement: Tony Hawk (click to read)</div></div>
-    <div class="img-card email"><img src="assets/img/digital-daily-email.jpg" width="900" height="3604" loading="lazy" decoding="async" alt="Digital Daily in-person email"><div class="cap">In-person email: Digital Daily (click to read)</div></div>
-    <div class="img-card email"><img src="assets/img/registration-email.jpg" width="800" height="2281" loading="lazy" decoding="async" alt="Plain-text registration email"><div class="cap">Registration email: plain text (click to read)</div></div>
+    <h3>Email</h3>
+    <div class="row c3">
+      <figure class="email"><img src="assets/img/tony-hawk-email.jpg" width="800" height="1525" loading="lazy" decoding="async" alt="Speaker announcement email featuring Tony Hawk"><figcaption>Speaker announcement: Tony Hawk. Click to read the whole email.</figcaption></figure>
+      <figure class="email"><img src="assets/img/digital-daily-email.jpg" width="900" height="3604" loading="lazy" decoding="async" alt="Digital Daily in-person email"><figcaption>In-person email: Digital Daily</figcaption></figure>
+      <figure class="email"><img src="assets/img/registration-email.jpg" width="800" height="2281" loading="lazy" decoding="async" alt="Plain-text registration email"><figcaption>Registration email, plain text</figcaption></figure>
+    </div>
   </div>
-</section>
+</article>
 
-<!-- AGENTFORCE 360 / TABLEAU -->
-<section id="agentforce">
-  <div class="section-header">
+<!-- 03 AGENTFORCE & TABLEAU -->
+<article class="project" id="agentforce">
+  <div class="project-head">
+    <div class="num">03</div>
     <div>
-      <div class="section-eyebrow">Salesforce · Agentforce &amp; Tableau</div>
-      <h2 class="section-title">Platform &amp; Product Copy</h2>
-      <p class="section-desc">Web copy for the Agentforce 360 Analytics &amp; Insights platform page, plus print and digital display advertising for Tableau. Translated complex AI and analytics product capabilities into clear, human-centered copy.</p>
+      <h2>Agentforce &amp; Tableau</h2>
+      <p class="credit">Copywriter II. Salesforce Marketing Cloud &amp; Tableau, 2024–25.</p>
     </div>
-    <dl class="facts">
-      <dt>Role</dt><dd>Copywriter II</dd>
-      <dt>Team</dt><dd>Salesforce Marketing Cloud &amp; Tableau</dd>
-      <dt>Scope</dt><dd>Platform page, print ad, display ads</dd>
-    </dl>
+  </div>
+  <p class="pull">“Marketing moves fast. Agentforce moves faster.”</p>
+  <p class="pull-src">Agentforce print ad</p>
+  <div class="story">
+    <p>Web copy for the Agentforce 360 Analytics &amp; Insights platform page, plus print and display advertising for Tableau. The job was to take dense AI and analytics capabilities and make them sound like something a person would want.</p>
   </div>
 
-  <div class="subsection-title">Agentforce 360 — Web Copy</div>
-  <div class="img-card spaced">
-    <div class="scroll-frame" tabindex="0" aria-label="Agentforce 360 landing page, scroll to read">
-      <img src="assets/img/agentforce-360-web-copy.jpg" width="1400" height="5268" loading="lazy" decoding="async" alt="Agentforce 360 Analytics and Insights landing page">
-    </div>
-    <div class="cap">Agentforce 360 Insights &amp; Analytics landing page (scroll inside the frame to read the full page)</div>
-  </div>
+  <div class="samples">
+    <h3>Agentforce 360 platform page</h3>
+    <figure>
+      <div class="scroll-frame" tabindex="0" aria-label="Agentforce 360 landing page, scroll to read"><img src="assets/img/agentforce-360-web-copy.jpg" width="1400" height="5268" loading="lazy" decoding="async" alt="Agentforce 360 Analytics and Insights landing page"></div>
+      <figcaption>Scroll inside the frame to read the full page.</figcaption>
+    </figure>
 
-  <div class="subsection-title">Print &amp; Display Ads</div>
-  <div class="grid-2">
-    <div class="img-card"><img src="assets/img/agentforce-print-ad.jpg" width="1400" height="1817" loading="lazy" decoding="async" alt="Agentforce print advertisement"><div class="cap">Agentforce print ad</div></div>
-    <div class="stack">
-      <div class="img-card"><img src="assets/img/tableau-soda.jpg" width="512" height="268" loading="lazy" decoding="async" alt="Tableau State of Data and Analytics display ad"><div class="cap">Tableau display: State of Data &amp; Analytics</div></div>
-      <div class="grid-2" style="margin:0">
-        <div class="img-card"><img src="assets/img/tableau-next-ad.jpg" width="256" height="512" loading="lazy" decoding="async" alt="Tableau Next display ad"><div class="cap">Tableau Next</div></div>
-        <div class="img-card"><img src="assets/img/tableau-semantics-ad.jpg" width="256" height="512" loading="lazy" decoding="async" alt="Tableau Semantics display ad"><div class="cap">Tableau Semantics</div></div>
+    <h3>Print &amp; display</h3>
+    <div class="row wide-left">
+      <figure><img src="assets/img/agentforce-print-ad.jpg" width="1400" height="1817" loading="lazy" decoding="async" alt="Agentforce print advertisement"><figcaption>Agentforce print ad</figcaption></figure>
+      <div class="stack">
+        <figure><img src="assets/img/tableau-soda.jpg" width="512" height="268" loading="lazy" decoding="async" alt="Tableau State of Data and Analytics display ad"><figcaption>Tableau, State of Data &amp; Analytics</figcaption></figure>
+        <div class="row c2">
+          <figure><img src="assets/img/tableau-next-ad.jpg" width="256" height="512" loading="lazy" decoding="async" alt="Tableau Next display ad"><figcaption>Tableau Next</figcaption></figure>
+          <figure><img src="assets/img/tableau-semantics-ad.jpg" width="256" height="512" loading="lazy" decoding="async" alt="Tableau Semantics display ad"><figcaption>Tableau Semantics</figcaption></figure>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</article>
 
-<!-- PEAKACTIVITY -->
-<section id="peakactivity">
-  <div class="section-header">
+<!-- 04 PEAKACTIVITY -->
+<article class="project" id="peakactivity">
+  <div class="project-head">
+    <div class="num">04</div>
     <div>
-      <div class="section-eyebrow">PeakActivity · 2020–2024</div>
-      <h2 class="section-title">B2B Campaign Work</h2>
-      <p class="section-desc">Four years at PeakActivity, a digital agency, growing from Marketing Copywriter to Sr. Copywriter. Two featured campaign packages below, each built end-to-end across the full funnel.</p>
-    </div>
-    <dl class="facts">
-      <dt>Role</dt><dd>Marketing Copywriter → Sr. Copywriter</dd>
-      <dt>Campaign 01</dt><dd>Third Level webinar series &amp; AI Readiness Quiz</dd>
-      <dt>Campaign 02</dt><dd>AB Tasty cobranded ebook</dd>
-    </dl>
-  </div>
-
-  <div class="subsection-title">Campaign 01 — Third Level Webinar Series</div>
-  <p class="campaign-desc">Full-funnel B2B webinar campaign in partnership with change-management firm Third Level. Scope: blog, registration page, email campaign, registration email, social posts, and an AI readiness quiz, all written to convert PeakActivity's existing audience and a net-new SMB segment.</p>
-
-  <div class="grid-2">
-    <div class="img-card"><img src="assets/img/webinar-blog.jpg" width="1400" height="702" loading="lazy" decoding="async" alt="Cobranded thought-leadership blog"><div class="cap">Cobranded thought-leadership blog</div></div>
-    <div class="img-card"><img src="assets/img/webinar-reg-page.jpg" width="1400" height="1505" loading="lazy" decoding="async" alt="Webinar registration page"><div class="cap">Webinar registration page</div></div>
-  </div>
-  <div class="grid-3">
-    <div class="img-card email"><img src="assets/img/webinar-email.jpg" width="900" height="774" loading="lazy" decoding="async" alt="Webinar email campaign"><div class="cap">Email campaign</div></div>
-    <div class="img-card email"><img src="assets/img/webinar-reg-email.jpg" width="900" height="1053" loading="lazy" decoding="async" alt="Webinar registration confirmation email"><div class="cap">Registration confirmation email</div></div>
-    <div class="stack">
-      <div class="img-card"><img src="assets/img/social-post-1.jpg" width="596" height="756" loading="lazy" decoding="async" alt="Webinar social post"><div class="cap">Social post</div></div>
-      <div class="img-card"><img src="assets/img/corp-social.jpg" width="587" height="508" loading="lazy" decoding="async" alt="Corporate social post"><div class="cap">Corporate social</div></div>
+      <h2>Four years at PeakActivity</h2>
+      <p class="credit">Marketing Copywriter to Sr. Copywriter. Digital agency, 2020–24.</p>
     </div>
   </div>
-  <div class="grid-2">
-    <div class="img-card"><img src="assets/img/ai-quiz-1.jpg" width="1400" height="696" loading="lazy" decoding="async" alt="AI Readiness Quiz, screen 1"><div class="cap">AI Readiness Quiz, screen 1</div></div>
-    <div class="img-card"><img src="assets/img/ai-quiz-2.jpg" width="1400" height="696" loading="lazy" decoding="async" alt="AI Readiness Quiz, screen 2"><div class="cap">AI Readiness Quiz, screen 2</div></div>
+  <p class="pull">“When you hear ‘conversion rate optimization,’ what comes to mind?”</p>
+  <p class="pull-src">AB Tasty ebook landing page</p>
+  <div class="story">
+    <p>Two campaign packages, each written end to end across the funnel. The first was a webinar series with change-management firm Third Level, aimed at PeakActivity's existing audience and a net-new SMB segment, with an AI readiness quiz to pull people in. The second was a gated eCommerce CRO guide with AB Tasty.</p>
   </div>
 
-  <hr class="campaign-divider">
+  <div class="samples">
+    <h3>Third Level webinar series</h3>
+    <div class="row c2">
+      <figure><img src="assets/img/webinar-blog.jpg" width="1400" height="702" loading="lazy" decoding="async" alt="Cobranded thought-leadership blog"><figcaption>Cobranded blog</figcaption></figure>
+      <figure><img src="assets/img/webinar-reg-page.jpg" width="1400" height="1505" loading="lazy" decoding="async" alt="Webinar registration page"><figcaption>Registration page</figcaption></figure>
+    </div>
+    <div class="row c3">
+      <figure class="email"><img src="assets/img/webinar-email.jpg" width="900" height="774" loading="lazy" decoding="async" alt="Webinar email campaign"><figcaption>Email</figcaption></figure>
+      <figure class="email"><img src="assets/img/webinar-reg-email.jpg" width="900" height="1053" loading="lazy" decoding="async" alt="Webinar registration confirmation email"><figcaption>Registration confirmation</figcaption></figure>
+      <div class="stack">
+        <figure><img src="assets/img/social-post-1.jpg" width="596" height="756" loading="lazy" decoding="async" alt="Webinar social post"><figcaption>Social post</figcaption></figure>
+        <figure><img src="assets/img/corp-social.jpg" width="587" height="508" loading="lazy" decoding="async" alt="Corporate social post"><figcaption>Corporate social</figcaption></figure>
+      </div>
+    </div>
+    <div class="row c2">
+      <figure><img src="assets/img/ai-quiz-1.jpg" width="1400" height="696" loading="lazy" decoding="async" alt="AI Readiness Quiz, screen 1"><figcaption>AI readiness quiz, screen 1</figcaption></figure>
+      <figure><img src="assets/img/ai-quiz-2.jpg" width="1400" height="696" loading="lazy" decoding="async" alt="AI Readiness Quiz, screen 2"><figcaption>AI readiness quiz, screen 2</figcaption></figure>
+    </div>
 
-  <div class="subsection-title">Campaign 02 — AB Tasty Cobranded Ebook</div>
-  <p class="campaign-desc">Lead-gen campaign in partnership with AB Tasty for a gated eCommerce CRO strategy guide. Scope: landing page, email campaign, and social post.</p>
-  <div class="grid-3">
-    <div class="img-card"><img src="assets/img/ebook-landing-page.jpg" width="1400" height="702" loading="lazy" decoding="async" alt="AB Tasty ebook landing page"><div class="cap">Landing page</div></div>
-    <div class="img-card"><img src="assets/img/ebook-email.jpg" width="900" height="875" loading="lazy" decoding="async" alt="AB Tasty ebook email"><div class="cap">Email campaign</div></div>
-    <div class="img-card"><img src="assets/img/ebook-social.jpg" width="613" height="783" loading="lazy" decoding="async" alt="AB Tasty ebook social post"><div class="cap">Social post</div></div>
+    <h3>AB Tasty CRO guide</h3>
+    <div class="row c3">
+      <figure><img src="assets/img/ebook-landing-page.jpg" width="1400" height="702" loading="lazy" decoding="async" alt="AB Tasty ebook landing page"><figcaption>Landing page</figcaption></figure>
+      <figure><img src="assets/img/ebook-email.jpg" width="900" height="875" loading="lazy" decoding="async" alt="AB Tasty ebook email"><figcaption>Email</figcaption></figure>
+      <figure><img src="assets/img/ebook-social.jpg" width="613" height="783" loading="lazy" decoding="async" alt="AB Tasty ebook social post"><figcaption>Social post</figcaption></figure>
+    </div>
   </div>
-</section>
+</article>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about">
-    <div>
-      <div class="section-eyebrow">About</div>
-      <h2 class="section-title">A little about me</h2>
-    </div>
-    <div>
-      <p>I'm a copywriter and content strategist who likes the whole range: <strong>big brand moments, live events, and the B2B detail work</strong> that makes a platform page actually convert.</p>
-      <p>Before Salesforce, I spent four years at PeakActivity writing full-funnel campaigns. Before that, I founded and ran <strong>Burgershack in Phnom Penh, Cambodia</strong>, which reached #2 on TripAdvisor among 1,200+ restaurants before I sold my stake. Hence "burger baron."</p>
-      <p>Today I've made <strong>Indianapolis</strong> home, where I'm raising my family.</p>
-      <ul class="skills">
-        <li>Brand voice</li><li>Campaign concepting</li><li>Event &amp; environmental</li><li>Video scripts</li><li>Email</li><li>Web &amp; landing pages</li><li>Content strategy</li>
-      </ul>
-    </div>
+<!-- ABOUT: his words, from his resume and cover letter -->
+<section class="about" id="about">
+  <h2>About the burger thing.</h2>
+  <div>
+    <p class="drop">Before I wrote copy, I founded and ran Burgershack in Phnom Penh, Cambodia. We made it to #2 on TripAdvisor out of 1,200+ restaurants, and I sold my stake two years in. There's a story about an exclusive Angus beef supplier deal in there that I'm happy to tell you in an interview.</p>
+    <p>It taught me guest experience from the ground up, which turns out to be most of what good copy is.</p>
+    <p>I didn't grow up in Indianapolis. I chose it. It's where I'm raising my family.</p>
   </div>
 </section>
 </main>
 
-<!-- CONTACT -->
-<div class="contact" id="contact">
-  <h2>Let's talk.</h2>
-  <p>Open to copywriter, content strategist, and creative roles.</p>
-  <div class="btn-row">
-    <a class="btn primary" href="mailto:ryanjsukys@gmail.com">Email me</a>
-    <a class="btn" href="https://linkedin.com/in/ryan-sukys/" target="_blank" rel="noopener">LinkedIn</a>
+<footer class="contact" id="contact">
+  <p>Open to copywriter, content strategist and creative roles.</p>
+  <a class="big" href="mailto:ryanjsukys@gmail.com">ryanjsukys@gmail.com</a>
+  <div class="others">
+    <a href="https://linkedin.com/in/ryan-sukys/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#top">Back to the top</a>
   </div>
-</div>
-<footer class="site-footer">
-  <span>© 2026 Ryan J Sukys</span>
-  <a href="#top">Back to top ↑</a>
 </footer>
+<div class="colophon">
+  <span>Ryan J Sukys, Indianapolis</span>
+  <span>Set in Gloock and Source Serif.</span>
+</div>
 
-<!-- LIGHTBOX -->
+</div>
+
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
-  <button id="lightbox-close" aria-label="Close">&#x2715;</button>
+  <button id="lightbox-close" aria-label="Close">×</button>
   <img id="lightbox-img" src="" alt="">
 </div>
 
@@ -474,8 +377,7 @@
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lightbox-img');
   let lastFocus = null;
-  const zoomable = document.querySelectorAll('main img');
-  zoomable.forEach(img => {
+  document.querySelectorAll('main img').forEach(img => {
     img.tabIndex = 0;
     img.setAttribute('role', 'button');
     img.addEventListener('click', () => openLightbox(img));
@@ -485,7 +387,6 @@
     lastFocus = el;
     lbImg.src = el.currentSrc || el.src;
     lbImg.alt = el.alt;
-    // Tall pieces (emails, full pages) open at reading width and scroll
     lb.classList.toggle('tall', el.naturalHeight > el.naturalWidth * 1.6);
     lb.classList.add('open');
     lb.scrollTop = 0;
